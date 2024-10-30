@@ -35,12 +35,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push backend image
-        run:
+        run: |
           docker build -t lazarpanov/backend:latest ./backend
           docker push lazarpanov/backend:latest
 
       - name: Build and push database image
-        run:
+        run: |
           docker build -t lazarpanov/database:latest ./database
           docker push lazarpanov/database:latest
 
