@@ -31,9 +31,12 @@ spec:
                   name: postgres-secret
                   key: password
           volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgres-storage
+            - mountPath: /docker-entrypoint-initialdb.d/
+              name: db-dump
       volumes:
-        - name: postgres-storage
-          persistentVolumeClaim:
-            claimName: postgres-pvc
+        - name: db-dump
+          configMap:
+            name: db-dump-config
+            items:
+              - key: dump.sql
+              - path: dump.sql
