@@ -39,4 +39,4 @@ spec:
             name: db-dump-config
             items:
               - key: dump.sql
-              - path: dump.sql
+              - path: ./database/dump.sql
