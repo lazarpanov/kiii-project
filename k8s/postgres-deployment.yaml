@@ -30,13 +30,14 @@ spec:
                 secretKeyRef:
                   name: postgres-secret
                   key: password
-          volumeMounts:
-            - mountPath: /docker-entrypoint-initialdb.d/
-              name: db-dump
+        volumeMounts:
+            - name: db-dump
+              mountPath: /docker-entrypoint-initdb.d/dump.sql
+              subPath: dump.sql
       volumes:
         - name: db-dump
           configMap:
             name: db-dump-config
             items:
               - key: dump.sql
-              - path: ./database/dump.sql
+                path: dump.sql
