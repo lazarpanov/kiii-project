@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
-    -  host: devops-project.com
+    -  host: kii-project.com
        http:
          paths:
            - pathType: Prefix
