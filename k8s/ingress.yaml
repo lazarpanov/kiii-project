@@ -13,6 +13,6 @@ spec:
              path: "/"
              backend:
                service:
-                 name: app-svc
+                 name: springboot-service
                  port:
                    number: 8080
