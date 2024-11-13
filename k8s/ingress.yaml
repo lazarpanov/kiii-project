@@ -1,18 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-ingress
+  name: kiii-project-ingress
   annotations:
-    kubernetes.io/ingress.class: "traefik"
+    ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-    -  host: kii-project.com
-       http:
-         paths:
-           - pathType: Prefix
-             path: "/"
-             backend:
-               service:
-                 name: springboot-service
-                 port:
-                   number: 8080
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: springboot-service
+            port:
+              number: 8080
