@@ -2,6 +2,8 @@
 name:  docker-build-and-push
 
 on:
+  push:
+    branches: [ "master" ]
   workflow_dispatch:
 
 jobs:
