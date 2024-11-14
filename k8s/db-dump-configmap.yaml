@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: db-dump-config
+  namespace: kii-project
 data:
   dump.sql: |
     --
