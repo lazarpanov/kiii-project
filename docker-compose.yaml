@@ -1,9 +1,6 @@
----
 services:
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: lazarpanov/backend:latest
     ports:
       - "80:8080"
     environment:
@@ -14,9 +11,7 @@ services:
       - db
 
   db:
-    build:
-      context: ./database
-      dockerfile: Dockerfile
+    image: postgres:latest
     ports:
       - "5432:5432"
     environment:
